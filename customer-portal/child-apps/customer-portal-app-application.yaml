@@ -1,14 +1,14 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: backend-frontend-app
+  name: web-frontend-backend
   namespace: portal-development-wxq79
 spec:
   project: default
   source:
     repoURL: 'https://github.com/KBrookfield/customer-portal'
     targetRevision: main
-    path: customer-portal/apps/backend-frontend-app
+    path: customer-portal/apps/web-frontend-backend
     directory:
       recurse: true
   destination:
