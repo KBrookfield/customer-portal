@@ -1,20 +1,20 @@
 apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
-  name: 3ta-app
+  name: backend-frontend-app
   namespace: portal-development-wxq79
 spec:
   project: default
   source:
     repoURL: 'https://github.com/KBrookfield/customer-portal'
     targetRevision: main
-    path: customer-portal/apps/3ta-app
+    path: customer-portal/apps/backend-frontend-app
     directory:
       recurse: true
   destination:
     # This is critical: you want to deploy to the newly registered cluster
     # Use the cluster context name that Argo CD sees after registration
-    name: 'vks-01-admin@vks-01'
+    name: 'portal-dev-cluster-01-admin@portal-dev-cluster-01'
     namespace: default
   syncPolicy:
     automated:

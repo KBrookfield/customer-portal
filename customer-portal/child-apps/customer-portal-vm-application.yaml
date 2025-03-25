@@ -18,5 +18,5 @@ spec:
     automated:
       prune: true
       selfHeal: true
-  # Runs in parallel with 3ta-vks
+  # Runs in parallel with customer-portal-vks
   syncWave: -1
