@@ -1,0 +1,20 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: customer-portal
+  namespace: portal-development-wxq79
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/KBrookfield/customer-portal'
+    targetRevision: main
+    path: customer-portal/child-apps    
+    directory:
+      recurse: true   
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: portal-development-wxq79
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true

@@ -1,0 +1,24 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachine
+metadata:
+  name: mysql-db
+  namespace: portal-development-wxq79
+  labels:
+    vm-selector: mysql-db
+    mysql-db-vm-lb: vm-lb-selector
+    topology.kubernetes.io/zone: zone-1
+spec:
+  className: best-effort-small
+  # Friendly image name: ubuntu-server-24.04-lts-noble-server-cloudimg-amd64
+  imageName: vmi-a394a691e823f9a08
+  storageClass: vcf-wld1-cl01-optimal-datastore-default-policy-raid1
+  powerState: PoweredOn
+  volumes:
+    - name: mysql-db-pvc-0
+      persistentVolumeClaim:
+        claimName: mysql-db-pvc-0
+  bootstrap:
+    cloudInit:
+      rawCloudConfig:
+        name: mysql-db-bootstrap-secret
+        key: user-data

@@ -1,0 +1,19 @@
+apiVersion: vmoperator.vmware.com/v1alpha3
+kind: VirtualMachineService
+metadata:
+  name: mysql-db-vm-lb
+  namespace: portal-development-wxq79
+spec:
+  selector:
+    mysql-db-vm-lb: vm-lb-selector
+  type: LoadBalancer
+  loadBalancerIP: 10.160.124.200
+  ports:
+    - name: mysql
+      protocol: TCP
+      port: 3306
+      targetPort: 3306
+    - name: ssh
+      protocol: TCP
+      port: 22
+      targetPort: 22

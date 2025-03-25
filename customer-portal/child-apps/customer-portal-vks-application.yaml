@@ -1,0 +1,22 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: kubernetes-cluster
+  namespace: portal-development-wxq79
+spec:
+  project: default
+  source:
+    repoURL: 'https://github.com/KBrookfield/customer-portal'
+    targetRevision: main
+    path: customer-portal/apps/kubernetes-cluster
+    directory:
+      recurse: true
+  destination:
+    server: 'https://kubernetes.default.svc'
+    namespace: portal-development-wxq79
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+  # Runs in parallel with 3ta-vm
+  syncWave: -1
