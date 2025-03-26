@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: web-frontend-backend
-  namespace: portal-development-wxq79
+  namespace: development-9fwpl
 spec:
   project: default
   source:

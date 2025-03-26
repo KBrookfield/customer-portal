@@ -2,7 +2,7 @@ apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   name: mysql-db-pvc-0
-  namespace: portal-development-wxq79
+  namespace: development-9fwpl
   labels:
     vm-selector: mysql-db
   annotations:

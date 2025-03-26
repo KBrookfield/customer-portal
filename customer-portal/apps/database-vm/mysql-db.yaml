@@ -2,7 +2,7 @@ apiVersion: vmoperator.vmware.com/v1alpha3
 kind: VirtualMachine
 metadata:
   name: mysql-db
-  namespace: portal-development-wxq79
+  namespace: development-9fwpl
   labels:
     vm-selector: mysql-db
     mysql-db-vm-lb: vm-lb-selector

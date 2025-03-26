@@ -2,7 +2,7 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: database-vm
-  namespace: portal-development-wxq79
+  namespace: development-9fwpl
 spec:
   project: default
   source:
@@ -13,7 +13,7 @@ spec:
       recurse: true
   destination:
     server: 'https://kubernetes.default.svc'
-    namespace: portal-development-wxq79
+    namespace: development-9fwpl
   syncPolicy:
     automated:
       prune: true
